@@ -6,8 +6,8 @@
       <class name="orangehrmtests.UserFunctionalityTest">
         <methods>
           <include name="tearDown"/>
-          <include name="testUserSearch"/>
           <include name="setUp"/>
+          <include name="testDeleteUser"/>
         </methods>
       </class> <!-- orangehrmtests.UserFunctionalityTest -->
     </classes>

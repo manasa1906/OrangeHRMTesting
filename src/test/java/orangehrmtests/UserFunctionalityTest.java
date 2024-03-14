@@ -29,16 +29,14 @@ public class UserFunctionalityTest extends SupportBrowser {
 		UserPage userPage = getUserPage();
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
-		Thread.sleep(3000);
-		userPage.enterUsername("salim011");
-		Thread.sleep(3000);
+		userPage.enterUsername("nalim");
 		userPage.selectRole("ESS");
-		userPage.enterEmployeename("Manav");
+		userPage.enterEmployeename("Nalim R P");
 		userPage.selectStatus("Enabled");
 		userPage.search();
-		/*//	String result = userPage.searchResult();
-		//	logger.info(result);
-		*/ }
+		String result = userPage.validate();
+		logger.info(result);
+	}
 
 	@Test
 	public void testUserAdd() throws InterruptedException {
@@ -48,14 +46,14 @@ public class UserFunctionalityTest extends SupportBrowser {
 		userPage.Add();
 		userPage.addRole("Admin");
 		userPage.addStatus("Enabled");
-		userPage.addUser("Manasa");
-		/*	if (userPage.getErrorMessageElement() == null) {
-				Assert.fail("Error message 'Already exists' is not present.");
-			}*/
-		userPage.addEmployee("Rahul Das");
+		userPage.addUser("HarshithaM");
+		userPage.errorMessagesDisplayed();
+		userPage.addEmployee("Odis Adalwin");
 		userPage.addPassword("xyz@123");
 		userPage.addConfirmPassword("xyz@123");
 		userPage.save();
+		String result = userPage.validate();
+		logger.info(result);
 
 	}
 
@@ -64,7 +62,31 @@ public class UserFunctionalityTest extends SupportBrowser {
 		UserPage userPage = getUserPage();
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
-		userPage.delete("Manasa");
+		userPage.delete("HarshithaM");
+		String result = userPage.validate();
+		logger.info(result);
+
+	}
+
+	@Test
+	public void testEditUser() throws InterruptedException {
+		UserPage userPage = getUserPage();
+		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
+		userPage.login("Admin", "admin123");
+		userPage.edit("nalim");
+		userPage.editRole("Admin");
+		userPage.editStatus("Enabled");
+		userPage.editEmployee("Odis Adalwin");
+		userPage.editUser("Manasa sai");
 		Thread.sleep(3000);
+		userPage.clickYes();
+		userPage.editPassword("xyz@123");
+		userPage.editConfirmPassword("xyz@123");
+		Thread.sleep(3000);
+		userPage.save();
+		Thread.sleep(3000);
+		String result = userPage.validate();
+		logger.info(result);
+
 	}
 }
