@@ -62,7 +62,8 @@ public class UserFunctionalityTest extends SupportBrowser {
 		UserPage userPage = getUserPage();
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
-		userPage.delete("HarshithaM");
+		userPage.delete("Eric13042");
+
 		String result = userPage.validate();
 		logger.info(result);
 

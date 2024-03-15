@@ -1,6 +1,7 @@
 package com.user.automation.common.pages;
 
 import java.time.Duration;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -74,6 +75,7 @@ public class UserPage {
 	private WebElement alreadyExisted;
 	@FindBy(how = How.XPATH, using = "//div[@id='oxd-toaster_1']")
 	private WebElement confirmation;
+	private static Logger logger = Logger.getLogger(UserPage.class.getName());
 
 	public UserPage(WebDriver driver) {
 		this.driver = driver;
@@ -208,13 +210,53 @@ public class UserPage {
 		clickButton(Save);
 	}
 
-	public void delete(String string) {
+	public boolean checkIfExists(String username) {
+		try {
+			WebElement userElement = findElementByXPath(
+					"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
+							+ username + "')]");
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+			wait.until(ExpectedConditions.visibilityOf(userElement));
+			return userElement != null;
+		} catch (Exception e) {
+			return false;
+		}
+	}
 
-		WebElement dltbtn = findElementByXPath(
+	public void delete(String username) throws InterruptedException {
+
+		/*WebElement dltbtn = findElementByXPath(
 				"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
 						+ string + "')]/../following-sibling::div//i[contains(@class, 'bi-trash')]");
 		clickButton(dltbtn);
-		clickButton(delete);
+		clickButton(delete);*/
+		if (checkIfExists(username)) {
+			WebElement deleteButton = findElementByXPath(
+					"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
+							+ username + "')]/../following-sibling::div//i[contains(@class, 'bi-trash')]");
+			clickButton(deleteButton);
+			clickButton(delete);
+			logger.info("User " + username + " deleted successfully.");
+		} else {
+			logger.info("User " + username + " not found. Adding the user...");
+
+			Add();
+			addRole("Admin");
+			addStatus("Enabled");
+			addUser(username);
+			addEmployee("Odis Adalwin");
+			addPassword("xyz@123");
+			addConfirmPassword("xyz@123");
+			save();
+			logger.info("User " + username + " added successfully.");
+
+			WebElement deleteButton = findElementByXPath(
+					"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
+							+ username + "')]/../following-sibling::div//i[contains(@class, 'bi-trash')]");
+			clickButton(deleteButton);
+			clickButton(delete);
+			logger.info("User " + username + " deleted successfully after adding.");
+		}
 	}
 
 	public void edit(String string) {
