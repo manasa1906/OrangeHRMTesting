@@ -12,6 +12,7 @@ import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.user.automation.common.pages.LoginPage;
 import com.user.automation.common.pages.UserPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -19,6 +20,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class SupportBrowser {
 	private static WebDriver driver;
 	private static UserPage userPage;
+	public static LoginPage loginPage;
 
 	@BeforeClass
 	public static void setUp() {
@@ -32,6 +34,7 @@ public class SupportBrowser {
 			driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			userPage = new UserPage(driver);
+			loginPage = new LoginPage(driver);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -43,6 +46,10 @@ public class SupportBrowser {
 
 	public UserPage getUserPage() {
 		return userPage;
+	}
+
+	public LoginPage getLoginPage() {
+		return loginPage;
 	}
 
 	private static WebDriver createDriver(String browser) {
