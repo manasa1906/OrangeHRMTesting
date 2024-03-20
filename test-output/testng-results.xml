@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="7" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-18T08:49:41Z" name="Default suite" finished-at="2024-03-18T08:49:52Z" duration-ms="10243">
+  <suite started-at="2024-03-20T10:26:22Z" name="Default suite" finished-at="2024-03-20T10:26:48Z" duration-ms="26168">
     <groups>
     </groups>
-    <test started-at="2024-03-18T08:49:41Z" name="Default test" finished-at="2024-03-18T08:49:52Z" duration-ms="10243">
-      <class name="orangehrmtests.LoginTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtests.LoginTest@141e5bef]" started-at="2024-03-18T14:19:41Z" name="setUp" finished-at="2024-03-18T14:19:44Z" duration-ms="2154" status="PASS">
+    <test started-at="2024-03-20T10:26:22Z" name="Default test" finished-at="2024-03-20T10:26:48Z" duration-ms="26168">
+      <class name="orangehrmtests.UserFunctionalityTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-20T15:56:22Z" name="setUp" finished-at="2024-03-20T15:56:24Z" duration-ms="1580" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="recuritmentTest()[pri:0, instance:orangehrmtests.LoginTest@141e5bef]" started-at="2024-03-18T14:19:44Z" name="recuritmentTest" finished-at="2024-03-18T14:19:52Z" duration-ms="7891" status="PASS">
+        <test-method signature="testEditUser()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-20T15:56:24Z" name="testEditUser" finished-at="2024-03-20T15:56:48Z" duration-ms="24429" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- recuritmentTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtests.LoginTest@141e5bef]" started-at="2024-03-18T14:19:52Z" name="tearDown" finished-at="2024-03-18T14:19:52Z" duration-ms="175" status="PASS">
+        </test-method> <!-- testEditUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-20T15:56:48Z" name="tearDown" finished-at="2024-03-20T15:56:48Z" duration-ms="145" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- orangehrmtests.LoginTest -->
+      </class> <!-- orangehrmtests.UserFunctionalityTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
