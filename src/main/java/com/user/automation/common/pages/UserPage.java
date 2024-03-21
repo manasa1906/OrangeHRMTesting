@@ -225,11 +225,6 @@ public class UserPage {
 
 	public void delete(String username) throws InterruptedException {
 
-		/*WebElement dltbtn = findElementByXPath(
-				"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
-						+ string + "')]/../following-sibling::div//i[contains(@class, 'bi-trash')]");
-		clickButton(dltbtn);
-		clickButton(delete);*/
 		if (checkIfExists(username)) {
 			WebElement deleteButton = findElementByXPath(
 					"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
@@ -238,8 +233,7 @@ public class UserPage {
 			clickButton(delete);
 			logger.info("User " + username + " deleted successfully.");
 		} else {
-			logger.info("User " + username + " not found. Adding the user...");
-
+			logger.info("User " + username + "not found. Adding the user...");
 			Add();
 			addRole("Admin");
 			addStatus("Enabled");
@@ -249,7 +243,6 @@ public class UserPage {
 			addConfirmPassword("xyz@123");
 			save();
 			logger.info("User " + username + " added successfully.");
-
 			WebElement deleteButton = findElementByXPath(
 					"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
 							+ username + "')]/../following-sibling::div//i[contains(@class, 'bi-trash')]");
@@ -259,11 +252,31 @@ public class UserPage {
 		}
 	}
 
-	public void edit(String string) {
-		WebElement editbtn = findElementByXPath(
-				"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
-						+ string + "')]/../following-sibling::div//i[contains(@class, 'oxd-icon bi-pencil-fill')]");
-		clickButton(editbtn);
+	public void edit(String string) throws InterruptedException {
+		if (checkIfExists(string)) {
+			WebElement editbtn = findElementByXPath(
+					"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
+							+ string + "')]/../following-sibling::div//i[contains(@class, 'oxd-icon bi-pencil-fill')]");
+
+			clickButton(editbtn);
+			logger.info("User " + string + " edited successfully.");
+		} else {
+			logger.info("User " + string + "not found. Adding the user...");
+			Add();
+			addRole("Admin");
+			addStatus("Enabled");
+			addUser(string);
+			addEmployee("Odis Adalwin");
+			addPassword("xyz@123");
+			addConfirmPassword("xyz@123");
+			save();
+			logger.info("User " + string + " added successfully.");
+			WebElement editbtn = findElementByXPath(
+					"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
+							+ string + "')]/../following-sibling::div//i[contains(@class, 'oxd-icon bi-pencil-fill')]");
+			clickButton(editbtn);
+			logger.info("User " + string + " edited successfully.");
+		}
 
 	}
 
@@ -323,12 +336,17 @@ public class UserPage {
 
 	}
 
-	public String validate() {
+	public String validate() throws Exception {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+			wait.until(ExpectedConditions.visibilityOf(confirmation));
+			String res = confirmation.getText();
+			return res;
+		} catch (Exception e) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-		wait.until(ExpectedConditions.visibilityOf(confirmation));
-		String res = confirmation.getText();
-		return res;
+			Assert.fail("Confirmation message not found within the specified time");
+			return null;
+		}
 	}
 
 	public void errorMessagesDisplayed() {

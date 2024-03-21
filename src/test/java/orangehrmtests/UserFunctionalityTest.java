@@ -25,7 +25,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 	}
 
 	@Test
-	public void testUserSearch() throws InterruptedException {
+	public void testUserSearch() throws Exception {
 		UserPage userPage = getUserPage();
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
@@ -39,7 +39,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 	}
 
 	@Test
-	public void testUserAdd() throws InterruptedException {
+	public void testUserAdd() throws Exception {
 		UserPage userPage = getUserPage();
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
@@ -58,7 +58,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 	}
 
 	@Test
-	public void testDeleteUser() throws InterruptedException {
+	public void testDeleteUser() throws Exception {
 		UserPage userPage = getUserPage();
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
@@ -70,20 +70,19 @@ public class UserFunctionalityTest extends SupportBrowser {
 	}
 
 	@Test
-	public void testEditUser() throws InterruptedException {
+	public void testEditUser() throws Exception {
 		UserPage userPage = getUserPage();
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
-		userPage.edit("nalim");
+		userPage.edit("nalimnm");
 		userPage.editRole("Admin");
 		userPage.editStatus("Enabled");
 		userPage.editEmployee("Odis Adalwin");
-		userPage.editUser("Manasa sai");
-		Thread.sleep(3000);
+		userPage.editUser("Rahul Das");
 		userPage.clickYes();
 		userPage.editPassword("xyz@123");
 		userPage.editConfirmPassword("xyz@123");
-		Thread.sleep(3000);
+		//Thread.sleep(3000);
 		userPage.save();
 		Thread.sleep(3000);
 		String result = userPage.validate();
