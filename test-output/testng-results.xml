@@ -2,37 +2,61 @@
 <testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-22T04:34:03Z" name="Default suite" finished-at="2024-03-22T04:35:30Z" duration-ms="86554">
+  <suite started-at="2024-03-22T09:17:22Z" name="Default suite" finished-at="2024-03-22T09:17:46Z" duration-ms="24593">
     <groups>
     </groups>
-    <test started-at="2024-03-22T04:34:03Z" name="Default test" finished-at="2024-03-22T04:35:30Z" duration-ms="86554">
+    <test started-at="2024-03-22T09:17:22Z" name="Default test" finished-at="2024-03-22T09:17:46Z" duration-ms="24593">
       <class name="orangehrmtests.UserFunctionalityTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T10:04:03Z" name="setUp" finished-at="2024-03-22T10:04:05Z" duration-ms="1485" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T14:47:22Z" name="setUp" finished-at="2024-03-22T14:47:24Z" duration-ms="1931" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testDeleteUser()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T10:04:05Z" name="testDeleteUser" finished-at="2024-03-22T10:05:30Z" duration-ms="84929" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="testEditUser()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T14:47:24Z" name="testEditUser" finished-at="2024-03-22T14:47:46Z" duration-ms="22469" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[Unable to find element with locator By.xpath: //div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), 'HarshithaM')]/../following-sibling::div//i[contains(@class, 'bi-trash')]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=122.0.6261.131)
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: driver.version: RemoteWebDriver]]>
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ecad9363cb7f25bed9edbda4563f2f01, findElement {using=xpath, value=//div[@class='orangehrm-header-container']//button[contains(@class, 'oxd-button--secondary') and contains(., 'Add')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.131, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\Manasa\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64918}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64918/devtoo..., se:cdpVersion: 122.0.6261.131, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ecad9363cb7f25bed9edbda4563f2f01]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), 'HarshithaM')]/../following-sibling::div//i[contains(@class, 'bi-trash')]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=122.0.6261.131)
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ecad9363cb7f25bed9edbda4563f2f01, findElement {using=xpath, value=//div[@class='orangehrm-header-container']//button[contains(@class, 'oxd-button--secondary') and contains(., 'Add')]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.131, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\Manasa\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64918}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64918/devtoo..., se:cdpVersion: 122.0.6261.131, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ecad9363cb7f25bed9edbda4563f2f01
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.user.automation.common.pages.UserPage.findElementByXPath(UserPage.java:94)
-	at com.user.automation.common.pages.UserPage.delete(UserPage.java:246)
-	at orangehrmtests.UserFunctionalityTest.testDeleteUser(UserFunctionalityTest.java:65)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
+	at com.user.automation.common.pages.UserPage.clickButton(UserPage.java:106)
+	at com.user.automation.common.pages.UserPage.Add(UserPage.java:163)
+	at com.user.automation.common.pages.UserPage.edit(UserPage.java:265)
+	at orangehrmtests.UserFunctionalityTest.testEditUser(UserFunctionalityTest.java:77)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -60,11 +84,11 @@ Driver info: driver.version: RemoteWebDriver
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDeleteUser -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T10:05:30Z" name="tearDown" finished-at="2024-03-22T10:05:30Z" duration-ms="114" status="PASS">
+        </test-method> <!-- testEditUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T14:47:46Z" name="tearDown" finished-at="2024-03-22T14:47:46Z" duration-ms="160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

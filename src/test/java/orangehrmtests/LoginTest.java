@@ -20,7 +20,7 @@ public class LoginTest extends SupportBrowser {
 	public void linkTest() {
 		WebDriver driver = getDriver();
 		LoginPage loginPage = getLoginPage();
-		getLoginPage().navigateToURL("https://opensource-demo.orangehrmlive.com/");
+		loginPage.navigateToHomePage();
 
 		logger.info("Page title: " + driver.getTitle());
 		logger.info("Current URL: " + loginPage.getCurrentURL());
@@ -32,7 +32,7 @@ public class LoginTest extends SupportBrowser {
 	public void testLogin() throws IOException {
 
 		loginPage = getLoginPage();
-		loginPage.navigateToURL("https://opensource-demo.orangehrmlive.com/");
+		loginPage.navigateToHomePage();
 
 		loginPage.login("Admin", "admin123");
 		if (loginPage.isElementDisplayed(loginPage.getProfileImage())) {
@@ -48,13 +48,13 @@ public class LoginTest extends SupportBrowser {
 	@Test
 	public void testEmptyUsernameAndPassword() throws IOException {
 		LoginPage loginPage = getLoginPage();
-		loginPage.navigateToURL("https://opensource-demo.orangehrmlive.com/");
+		loginPage.navigateToHomePage();
 		loginPage.login("", "");
 
 		boolean b = loginPage.errorMessagesDisplayed();
 
 		if (b) {
-			logger.info("Error messages displayed for both username and password fields:");
+			logger.info("Error messages displayed for both username and password fields");
 
 		} else {
 			logger.info("Error messages not displayed properly.");
@@ -64,7 +64,7 @@ public class LoginTest extends SupportBrowser {
 	@Test
 	public void testInvalidLogin() throws IOException {
 		LoginPage loginPage = getLoginPage();
-		loginPage.navigateToURL("https://opensource-demo.orangehrmlive.com/");
+		loginPage.navigateToHomePage();
 		loginPage.login("Admin1", "admin123");
 		boolean b = loginPage.isErrorDisplayed();
 		if (b) {
@@ -78,7 +78,7 @@ public class LoginTest extends SupportBrowser {
 	@Test
 	public void testValidLogin() throws IOException {
 		LoginPage loginPage = getLoginPage();
-		loginPage.navigateToURL("https://opensource-demo.orangehrmlive.com/");
+		loginPage.navigateToHomePage();
 		loginPage.login("Admin", "admin123");
 		boolean b = loginPage.isProfileDisplayed();
 		if (b) {
@@ -92,7 +92,7 @@ public class LoginTest extends SupportBrowser {
 	@Test
 	void recuritmentTest() throws InterruptedException {
 		LoginPage loginPage = getLoginPage();
-		loginPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates");
+		loginPage.navigateToRecruitmentPage();
 		loginPage.login("Admin", "admin123");
 		LoginPage.jobTitle("Chief Executive Officer");
 		LoginPage.vacancy("Sales Representative");
@@ -104,7 +104,7 @@ public class LoginTest extends SupportBrowser {
 	public void restrictedAccess() throws IOException {
 		WebDriver driver = getDriver();
 		LoginPage loginPage = getLoginPage();
-		loginPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
+		loginPage.navigateToDashboardPage();
 		String homePage = "https://opensource-demo.orangehrmlive.com/";
 		String username = "Admin";
 		String password = "admin123";

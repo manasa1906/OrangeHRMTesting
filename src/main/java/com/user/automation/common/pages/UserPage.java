@@ -180,6 +180,10 @@ public class UserPage {
 
 	public void addUser(String string) {
 		clickButton(addUser);
+		if (string.length() < 5) {
+			Assert.fail("Entered text must be at least 5 characters long.");
+		}
+
 		enterText(addUser, string);
 
 	}
@@ -347,6 +351,14 @@ public class UserPage {
 			Assert.fail("Confirmation message not found within the specified time");
 			return null;
 		}
+	}
+
+	public void navigateToHomePage() {
+		navigateToURL("https://opensource-demo.orangehrmlive.com/");
+	}
+
+	public void navigateToAdminPage() {
+		navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 	}
 
 	public void errorMessagesDisplayed() {

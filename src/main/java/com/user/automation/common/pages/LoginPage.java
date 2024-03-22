@@ -110,6 +110,18 @@ public class LoginPage extends SupportBrowser {
 		}
 	}
 
+	public void navigateToHomePage() {
+		navigateToURL("https://opensource-demo.orangehrmlive.com/");
+	}
+
+	public void navigateToRecruitmentPage() {
+		navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates");
+	}
+
+	public void navigateToDashboardPage() {
+		navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index");
+	}
+
 	public boolean isProfileDisplayed() {
 		if (profileImage.isDisplayed()) {
 			return true;

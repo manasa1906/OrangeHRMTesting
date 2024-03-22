@@ -14,7 +14,8 @@ public class UserFunctionalityTest extends SupportBrowser {
 	@Test
 	public void testLogin() throws IOException {
 		UserPage userPage = getUserPage();
-		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/");
+		//userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/");
+		userPage.navigateToHomePage();
 		userPage.login("Admin", "admin123");
 		if (userPage.isElementDisplayed(userPage.getProfileImage())) {
 			logger.info("Successfully logged in");
@@ -27,7 +28,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 	@Test
 	public void testUserSearch() throws Exception {
 		UserPage userPage = getUserPage();
-		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
+		userPage.navigateToAdminPage();
 		userPage.login("Admin", "admin123");
 		userPage.enterUsername("nalim");
 		userPage.selectRole("ESS");
@@ -41,7 +42,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 	@Test
 	public void testUserAdd() throws Exception {
 		UserPage userPage = getUserPage();
-		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
+		userPage.navigateToAdminPage();
 		userPage.login("Admin", "admin123");
 		userPage.Add();
 		userPage.addRole("Admin");
@@ -60,7 +61,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 	@Test
 	public void testDeleteUser() throws Exception {
 		UserPage userPage = getUserPage();
-		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
+		userPage.navigateToAdminPage();
 		userPage.login("Admin", "admin123");
 		userPage.delete("HarshithaM");
 		String result = userPage.validate();
@@ -71,7 +72,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 	@Test
 	public void testEditUser() throws Exception {
 		UserPage userPage = getUserPage();
-		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
+		userPage.navigateToAdminPage();
 		userPage.login("Admin", "admin123");
 		userPage.edit("nalimns");
 		userPage.editRole("Admin");

@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Manasa\AppData\Local\Temp\testng-eclipse-659439198\testng-customsuite.xml</span>
+                    <span>C:\Users\Manasa\AppData\Local\Temp\testng-eclipse-815049232\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="orangehrmtests.UserFunctionalityTest" class="method navigator-link" hash-for-method="testDeleteUser">testDeleteUser</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="orangehrmtests.UserFunctionalityTest" class="method navigator-link" hash-for-method="testEditUser">testEditUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -125,21 +125,41 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testDeleteUser">
-                  </a> <!-- testDeleteUser -->
-                  <span class="method-name">testDeleteUser</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //div[contains(@class, &apos;oxd-table-row--with-border&apos;)]/div[contains(@class, &apos;oxd-padding-cell&apos;)]/div[contains(text(), &apos;HarshithaM&apos;)]/../following-sibling::div//i[contains(@class, &apos;bi-trash&apos;)]
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+                  <a name="testEditUser">
+                  </a> <!-- testEditUser -->
+                  <span class="method-name">testEditUser</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=122.0.6261.131)
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
-Driver info: driver.version: RemoteWebDriver
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:168)
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [ecad9363cb7f25bed9edbda4563f2f01, findElement {using=xpath, value=//div[@class=&apos;orangehrm-header-container&apos;]//button[contains(@class, &apos;oxd-button--secondary&apos;) and contains(., &apos;Add&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.131, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\Manasa\AppData\Loc...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64918}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64918/devtoo..., se:cdpVersion: 122.0.6261.131, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ecad9363cb7f25bed9edbda4563f2f01
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at com.user.automation.common.pages.UserPage.findElementByXPath(UserPage.java:94)
-	at com.user.automation.common.pages.UserPage.delete(UserPage.java:246)
-	at orangehrmtests.UserFunctionalityTest.testDeleteUser(UserFunctionalityTest.java:65)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
+	at com.user.automation.common.pages.UserPage.clickButton(UserPage.java:106)
+	at com.user.automation.common.pages.UserPage.Add(UserPage.java:163)
+	at com.user.automation.common.pages.UserPage.edit(UserPage.java:265)
+	at orangehrmtests.UserFunctionalityTest.testEditUser(UserFunctionalityTest.java:77)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -174,7 +194,7 @@ Driver info: driver.version: RemoteWebDriver
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Manasa\AppData\Local\Temp\testng-eclipse-659439198\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Manasa\AppData\Local\Temp\testng-eclipse-815049232\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -185,7 +205,7 @@ Driver info: driver.version: RemoteWebDriver
     &lt;classes&gt;
       &lt;class name=&quot;orangehrmtests.UserFunctionalityTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;testDeleteUser&quot;/&gt;
+          &lt;include name=&quot;testEditUser&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- orangehrmtests.UserFunctionalityTest --&gt;
     &lt;/classes&gt;
@@ -229,14 +249,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testDeleteUser')
+data.setCell(0, 1, 'testEditUser')
 data.setCell(0, 2, 'orangehrmtests.UserFunctionalityTest')
-data.setCell(0, 3, 84929);
+data.setCell(0, 3, 22469);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 22 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -257,11 +277,11 @@ return data;
             <div class="ignored-class-div">
               <span class="ignored-class-name">orangehrmtests.UserFunctionalityTest</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">testEditUser</span>
-                <br/>
                 <span class="ignored-method-name">testUserSearch</span>
                 <br/>
                 <span class="ignored-method-name">testUserAdd</span>
+                <br/>
+                <span class="ignored-method-name">testDeleteUser</span>
                 <br/>
                 <span class="ignored-method-name">testLogin</span>
                 <br/>
@@ -283,12 +303,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testDeleteUser</span>
-                <span class="method-start">1493 ms</span>
+                <span class="method-name">testEditUser</span>
+                <span class="method-start">1943 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">86437 ms</span>
+                <span class="method-start">24428 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
