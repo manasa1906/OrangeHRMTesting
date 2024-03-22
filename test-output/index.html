@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\Manasa\AppData\Local\Temp\testng-eclipse-2139236083\testng-customsuite.xml</span>
+                    <span>C:\Users\Manasa\AppData\Local\Temp\testng-eclipse-659439198\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -102,7 +102,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="orangehrmtests.UserFunctionalityTest" class="method navigator-link" hash-for-method="testUserSearch">testUserSearch</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="orangehrmtests.UserFunctionalityTest" class="method navigator-link" hash-for-method="testDeleteUser">testDeleteUser</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -125,10 +125,10 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="testUserSearch">
-                  </a> <!-- testUserSearch -->
-                  <span class="method-name">testUserSearch</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //*[text()=&apos;Status&apos;]/../../div//*[text()=&apos;Enabled&apos;]
+                  <a name="testDeleteUser">
+                  </a> <!-- testDeleteUser -->
+                  <span class="method-name">testDeleteUser</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //div[contains(@class, &apos;oxd-table-row--with-border&apos;)]/div[contains(@class, &apos;oxd-padding-cell&apos;)]/div[contains(text(), &apos;HarshithaM&apos;)]/../following-sibling::div//i[contains(@class, &apos;bi-trash&apos;)]
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.18.1&apos;, revision: &apos;b1d3319b48&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.10&apos;
@@ -138,8 +138,8 @@ Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
 	at com.user.automation.common.pages.UserPage.findElementByXPath(UserPage.java:94)
-	at com.user.automation.common.pages.UserPage.selectStatus(UserPage.java:152)
-	at orangehrmtests.UserFunctionalityTest.testUserSearch(UserFunctionalityTest.java:35)
+	at com.user.automation.common.pages.UserPage.delete(UserPage.java:246)
+	at orangehrmtests.UserFunctionalityTest.testDeleteUser(UserFunctionalityTest.java:65)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -174,7 +174,7 @@ Driver info: driver.version: RemoteWebDriver
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\Manasa\AppData\Local\Temp\testng-eclipse-2139236083\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\Manasa\AppData\Local\Temp\testng-eclipse-659439198\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -185,7 +185,7 @@ Driver info: driver.version: RemoteWebDriver
     &lt;classes&gt;
       &lt;class name=&quot;orangehrmtests.UserFunctionalityTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;testUserSearch&quot;/&gt;
+          &lt;include name=&quot;testDeleteUser&quot;/&gt;
         &lt;/methods&gt;
       &lt;/class&gt; &lt;!-- orangehrmtests.UserFunctionalityTest --&gt;
     &lt;/classes&gt;
@@ -229,14 +229,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'testUserSearch')
+data.setCell(0, 1, 'testDeleteUser')
 data.setCell(0, 2, 'orangehrmtests.UserFunctionalityTest')
-data.setCell(0, 3, 19025);
+data.setCell(0, 3, 84929);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -259,7 +259,7 @@ return data;
               <div class="ignored-methods-div">
                 <span class="ignored-method-name">testEditUser</span>
                 <br/>
-                <span class="ignored-method-name">testDeleteUser</span>
+                <span class="ignored-method-name">testUserSearch</span>
                 <br/>
                 <span class="ignored-method-name">testUserAdd</span>
                 <br/>
@@ -283,12 +283,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">testUserSearch</span>
-                <span class="method-start">1642 ms</span>
+                <span class="method-name">testDeleteUser</span>
+                <span class="method-start">1493 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">20698 ms</span>
+                <span class="method-start">86437 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

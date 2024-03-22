@@ -266,7 +266,8 @@ public class UserPage {
 			addRole("Admin");
 			addStatus("Enabled");
 			addUser(string);
-			addEmployee("Odis Adalwin");
+			addEmployee("Bob Tester");
+			Thread.sleep(3000);
 			addPassword("xyz@123");
 			addConfirmPassword("xyz@123");
 			save();
@@ -275,7 +276,6 @@ public class UserPage {
 					"//div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), '"
 							+ string + "')]/../following-sibling::div//i[contains(@class, 'oxd-icon bi-pencil-fill')]");
 			clickButton(editbtn);
-			logger.info("User " + string + " edited successfully.");
 		}
 
 	}

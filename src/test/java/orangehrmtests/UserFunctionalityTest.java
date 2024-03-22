@@ -63,7 +63,6 @@ public class UserFunctionalityTest extends SupportBrowser {
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
 		userPage.delete("HarshithaM");
-
 		String result = userPage.validate();
 		logger.info(result);
 
@@ -74,15 +73,14 @@ public class UserFunctionalityTest extends SupportBrowser {
 		UserPage userPage = getUserPage();
 		userPage.navigateToURL("https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers");
 		userPage.login("Admin", "admin123");
-		userPage.edit("nalimnm");
+		userPage.edit("nalimns");
 		userPage.editRole("Admin");
 		userPage.editStatus("Enabled");
-		userPage.editEmployee("Odis Adalwin");
-		userPage.editUser("Rahul Das");
+		userPage.editEmployee("Manoj Kumar");
 		userPage.clickYes();
 		userPage.editPassword("xyz@123");
 		userPage.editConfirmPassword("xyz@123");
-		//Thread.sleep(3000);
+		Thread.sleep(3000);
 		userPage.save();
 		Thread.sleep(3000);
 		String result = userPage.validate();

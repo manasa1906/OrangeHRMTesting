@@ -2,26 +2,26 @@
 <testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-21T10:36:02Z" name="Default suite" finished-at="2024-03-21T10:36:22Z" duration-ms="20812">
+  <suite started-at="2024-03-22T04:34:03Z" name="Default suite" finished-at="2024-03-22T04:35:30Z" duration-ms="86554">
     <groups>
     </groups>
-    <test started-at="2024-03-21T10:36:02Z" name="Default test" finished-at="2024-03-21T10:36:22Z" duration-ms="20812">
+    <test started-at="2024-03-22T04:34:03Z" name="Default test" finished-at="2024-03-22T04:35:30Z" duration-ms="86554">
       <class name="orangehrmtests.UserFunctionalityTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-21T16:06:02Z" name="setUp" finished-at="2024-03-21T16:06:03Z" duration-ms="1633" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T10:04:03Z" name="setUp" finished-at="2024-03-22T10:04:05Z" duration-ms="1485" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testUserSearch()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-21T16:06:03Z" name="testUserSearch" finished-at="2024-03-21T16:06:22Z" duration-ms="19025" status="FAIL">
+        <test-method signature="testDeleteUser()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T10:04:05Z" name="testDeleteUser" finished-at="2024-03-22T10:05:30Z" duration-ms="84929" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Unable to find element with locator By.xpath: //*[text()='Status']/../../div//*[text()='Enabled']
+              <![CDATA[Unable to find element with locator By.xpath: //div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), 'HarshithaM')]/../following-sibling::div//i[contains(@class, 'bi-trash')]
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
 Driver info: driver.version: RemoteWebDriver]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //*[text()='Status']/../../div//*[text()='Enabled']
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to find element with locator By.xpath: //div[contains(@class, 'oxd-table-row--with-border')]/div[contains(@class, 'oxd-padding-cell')]/div[contains(text(), 'HarshithaM')]/../following-sibling::div//i[contains(@class, 'bi-trash')]
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.10'
@@ -31,8 +31,8 @@ Driver info: driver.version: RemoteWebDriver
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
 	at com.user.automation.common.pages.UserPage.findElementByXPath(UserPage.java:94)
-	at com.user.automation.common.pages.UserPage.selectStatus(UserPage.java:152)
-	at orangehrmtests.UserFunctionalityTest.testUserSearch(UserFunctionalityTest.java:35)
+	at com.user.automation.common.pages.UserPage.delete(UserPage.java:246)
+	at orangehrmtests.UserFunctionalityTest.testDeleteUser(UserFunctionalityTest.java:65)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -63,8 +63,8 @@ Driver info: driver.version: RemoteWebDriver
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testUserSearch -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-21T16:06:22Z" name="tearDown" finished-at="2024-03-21T16:06:22Z" duration-ms="109" status="PASS">
+        </test-method> <!-- testDeleteUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtests.UserFunctionalityTest@a4add54]" started-at="2024-03-22T10:05:30Z" name="tearDown" finished-at="2024-03-22T10:05:30Z" duration-ms="114" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
