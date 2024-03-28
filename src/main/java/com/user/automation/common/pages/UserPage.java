@@ -75,6 +75,8 @@ public class UserPage {
 	private WebElement alreadyExisted;
 	@FindBy(how = How.XPATH, using = "//div[@id='oxd-toaster_1']")
 	private WebElement confirmation;
+	@FindBy(how = How.XPATH, using = "//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']")
+	private WebElement invalidMsg;
 	private static Logger logger = Logger.getLogger(UserPage.class.getName());
 
 	public UserPage(WebDriver driver) {
@@ -263,7 +265,6 @@ public class UserPage {
 							+ string + "')]/../following-sibling::div//i[contains(@class, 'oxd-icon bi-pencil-fill')]");
 
 			clickButton(editbtn);
-			logger.info("User " + string + " edited successfully.");
 		} else {
 			logger.info("User " + string + "not found. Adding the user...");
 			Add();
@@ -348,7 +349,7 @@ public class UserPage {
 			return res;
 		} catch (Exception e) {
 
-			Assert.fail("Confirmation message not found within the specified time");
+			Assert.fail("Invalid inputs specified");
 			return null;
 		}
 	}
@@ -364,9 +365,12 @@ public class UserPage {
 	public void errorMessagesDisplayed() {
 		try {
 			String text = alreadyExisted.getText();
+			String inavlid = invalidMsg.getText();
 			if (text.equals("Already exists")) {
 				Assert.fail("Already existed");
 
+			} else if (invalidMsg.equals("invalid")) {
+				Assert.fail("Invalid Employee");
 			}
 		} catch (Exception e) {
 

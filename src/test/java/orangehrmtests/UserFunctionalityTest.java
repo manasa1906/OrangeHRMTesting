@@ -32,7 +32,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 		userPage.login("Admin", "admin123");
 		userPage.enterUsername("nalim");
 		userPage.selectRole("ESS");
-		userPage.enterEmployeename("Odis Adalwin");
+		userPage.enterEmployeename("Bob Tester");
 		userPage.selectStatus("Enabled");
 		userPage.search();
 		String result = userPage.validate();
@@ -49,7 +49,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 		userPage.addStatus("Enabled");
 		userPage.addUser("HarshithaM");
 		userPage.errorMessagesDisplayed();
-		userPage.addEmployee("Odis Adalwin");
+		userPage.addEmployee("Bob Tester");
 		userPage.addPassword("xyz@123");
 		userPage.addConfirmPassword("xyz@123");
 		userPage.save();
@@ -63,7 +63,7 @@ public class UserFunctionalityTest extends SupportBrowser {
 		UserPage userPage = getUserPage();
 		userPage.navigateToAdminPage();
 		userPage.login("Admin", "admin123");
-		userPage.delete("HarshithaM");
+		userPage.delete("Darell123");
 		String result = userPage.validate();
 		logger.info(result);
 
@@ -74,10 +74,9 @@ public class UserFunctionalityTest extends SupportBrowser {
 		UserPage userPage = getUserPage();
 		userPage.navigateToAdminPage();
 		userPage.login("Admin", "admin123");
-		userPage.edit("nalimns");
+		userPage.edit("nalimnsn");
 		userPage.editRole("Admin");
 		userPage.editStatus("Enabled");
-		userPage.editEmployee("Manoj Kumar");
 		userPage.clickYes();
 		userPage.editPassword("xyz@123");
 		userPage.editConfirmPassword("xyz@123");
