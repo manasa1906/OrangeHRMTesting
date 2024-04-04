@@ -13,6 +13,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 import com.user.automation.common.pages.LoginPage;
+import com.user.automation.common.pages.TestPage;
 import com.user.automation.common.pages.UserPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +22,7 @@ public class SupportBrowser {
 	private static WebDriver driver;
 	private static UserPage userPage;
 	public static LoginPage loginPage;
+	public static TestPage testPage;
 
 	@BeforeClass
 	public static void setUp() {
@@ -31,10 +33,11 @@ public class SupportBrowser {
 			String browser = properties.getProperty("browser");
 			driver = createDriver(browser);
 			driver.manage().window().maximize();
-			driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+			driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
 			userPage = new UserPage(driver);
 			loginPage = new LoginPage(driver);
+			testPage = new TestPage(driver);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -50,6 +53,10 @@ public class SupportBrowser {
 
 	public LoginPage getLoginPage() {
 		return loginPage;
+	}
+
+	public TestPage getTestPage() {
+		return testPage;
 	}
 
 	private static WebDriver createDriver(String browser) {

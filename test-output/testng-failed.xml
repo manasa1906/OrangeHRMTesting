@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test name="Default test(failed)">
     <classes>
-      <class name="orangehrmtests.UserFunctionalityTest">
+      <class name="orangehrmtests.WebElementTest">
         <methods>
           <include name="tearDown"/>
-          <include name="testEditUser"/>
+          <include name="radioBtnTest"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- orangehrmtests.UserFunctionalityTest -->
+      </class> <!-- orangehrmtests.WebElementTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
