@@ -16,8 +16,8 @@ public class WebElementTest extends SupportBrowser {
 		testPage = getTestPage();
 		testPage.navigateToLink();
 		testPage.clickonTextBox();
-		testPage.enterDeatilsOfTextBox("Man", "12@gmail.com", "", "123");
-		testPage.validateTextBox();
+		testPage.enterDeatilsOfTextBox("Man", "12@gmail.com", "Abc", "123");
+		testPage.validateTextBox("Man", "12@gmail.com", "Abc", "123");
 	}
 
 	@Test
@@ -25,8 +25,8 @@ public class WebElementTest extends SupportBrowser {
 		testPage = getTestPage();
 		testPage.navigateToLink();
 		testPage.clickRadioBtn();
-		testPage.selectRadioBtn("Yes");
-		testPage.validateRadio();
+		testPage.selectRadioBtn("Impressive");
+
 	}
 
 	@Test
@@ -39,6 +39,7 @@ public class WebElementTest extends SupportBrowser {
 		testPage.navigateToLink();
 		testPage.clickOnButtons();
 		testPage.clickButtons(buttonList);
+		testPage.validateButton(buttonList);
 
 	}
 }

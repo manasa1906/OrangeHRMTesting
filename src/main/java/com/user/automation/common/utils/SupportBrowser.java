@@ -1,11 +1,13 @@
 package com.user.automation.common.utils;
 
-import java.io.FileInputStream;
-import java.util.Properties;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
@@ -27,14 +29,24 @@ public class SupportBrowser {
 	@BeforeClass
 	public static void setUp() {
 		try {
-			Properties properties = new Properties();
-			FileInputStream file = new FileInputStream("src/main/resources/config.properties");
-			properties.load(file);
-			String browser = properties.getProperty("browser");
-			driver = createDriver(browser);
+
+			ChromeOptions options = new ChromeOptions();
+			String path = System.getProperty("user.dir") + "\\src\\test\\resources\\addons\\ublock.crx";
+
+			//			Map<String, Object> prefs = new HashMap<>();
+			//			prefs.put("profile.default_content_settings.popups", 0);
+
+			options.addExtensions(new File(path));
+			//			options.setExperimentalOption("prefs", prefs);
+
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver(options);
+
 			driver.manage().window().maximize();
 			driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
 			driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
+
+			Thread.sleep(1000);
 			userPage = new UserPage(driver);
 			loginPage = new LoginPage(driver);
 			testPage = new TestPage(driver);
@@ -60,9 +72,15 @@ public class SupportBrowser {
 	}
 
 	private static WebDriver createDriver(String browser) {
+		ChromeOptions options = new ChromeOptions();
 		if (browser.equalsIgnoreCase("chrome")) {
+
+			Map<String, Object> prefs = new HashMap<>();
+			prefs.put("profile.default_content_settings.popups", 0);
+			options.setExperimentalOption("prefs", prefs);
+
 			WebDriverManager.chromedriver().setup();
-			return new ChromeDriver();
+			return new ChromeDriver(options);
 		} else if (browser.equalsIgnoreCase("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			return new FirefoxDriver();
@@ -74,7 +92,7 @@ public class SupportBrowser {
 			return new SafariDriver();
 		} else {
 			WebDriverManager.chromedriver().setup();
-			return new ChromeDriver();
+			return new ChromeDriver(options);
 		}
 	}
 

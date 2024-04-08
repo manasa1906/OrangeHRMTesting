@@ -44,7 +44,7 @@ public class TestPage extends SupportBrowser {
 	private WebElement doubleClickBtn;
 	@FindBy(how = How.XPATH, using = "//button[@id ='rightClickBtn']")
 	private WebElement rightClickBtn;
-	@FindBy(how = How.XPATH, using = "//button[@id ='gyayS']")
+	@FindBy(how = How.XPATH, using = "(//button[@type='button'])[4]")
 	private WebElement dynamicClickBtn;
 	@FindBy(how = How.XPATH, using = "//div[@class='mt-4']//../p")
 	private List<WebElement> validateButtonList;
@@ -59,7 +59,7 @@ public class TestPage extends SupportBrowser {
 	}
 
 	public void clickonTextBox() {
-		//textBox.click();
+
 		JSClick(textBox);
 	}
 
@@ -80,13 +80,36 @@ public class TestPage extends SupportBrowser {
 
 	}
 
-	public void validateTextBox() {
+	public void validateTextBox(String name, String email, String curr, String perm) {
 
 		for (WebElement element : list) {
 
 			System.out.println(element.getText());
+			if (name != null) {
+				String ExpectedResult = "Name:" + name;
+				if (element.getText().contains(ExpectedResult)) {
+					System.out.println("Name is validated");
+				}
+			}
+			if (email != null) {
+				String ExpectedResult = "Email:" + email;
+				if (element.getText().contains(ExpectedResult)) {
+					System.out.println("Email is validated");
+				}
+			}
+			if (curr != null) {
+				String ExpectedResult = "Current Address :" + curr;
+				if (element.getText().contains(ExpectedResult)) {
+					System.out.println("Current Address  is validated");
+				}
+			}
+			if (perm != null) {
+				String ExpectedResult = "Permananet Address :" + perm;
+				if (element.getText().contains(ExpectedResult)) {
+					System.out.println("Permananet Address  is validated");
+				}
+			}
 		}
-		System.out.println("Entered details successfully");
 	}
 
 	private boolean isValidEmail(String email) {
@@ -115,16 +138,30 @@ public class TestPage extends SupportBrowser {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.elementToBeClickable(SelectRadioBtn));
 		JSClick(SelectRadioBtn);
+		validateRadio(string);
 
 	}
 
-	public void validateRadio() {
+	public void validateRadio(String option) {
 		try {
 			System.out.println(validateRadioBtn.getText());
+			if (option.equals("Yes")) {
+				String ExpectedRes = "You have selected Yes";
+				if (((validateRadioBtn.getText()).equals(ExpectedRes))) {
+					System.out.println("yes is validated");
+
+				}
+			}
+			if (option.equals("Impressive")) {
+				String ExpectedRes = "You have selected Impressive";
+				if (((validateRadioBtn.getText()).equals(ExpectedRes))) {
+					System.out.println("Impressive is validated");
+
+				}
+			}
 		} catch (Exception e) {
 			Assert.fail("Not selected any of the radio Buttons");
 		}
-
 	}
 
 	private WebElement findByXpath(String string) {
@@ -151,25 +188,46 @@ public class TestPage extends SupportBrowser {
 					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", rightClickBtn);
 					actions.contextClick(rightClickBtn).perform();
 				} else if ("dynamicClick".equals(action)) {
-					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dynamicClickBtn);
+					//	((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", dynamicClickBtn);
 					JSClick(dynamicClickBtn);
 				} else {
 					System.out.println("Invalid action specified");
 
 				}
-				validateButton();
+
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void validateButton() {
+	public void validateButton(List<String> actionsList) {
 		try {
 
 			for (WebElement element : validateButtonList) {
 
-				System.out.println("res" + element.getText());
+				System.out.println(element.getText());
+				for (String action : actionsList) {
+					if ("doubleClick".equals(action)) {
+						String ExpectedResult = "You have done a double click";
+						if (element.getText().contains(ExpectedResult)) {
+							System.out.println("DoubleClick is validated");
+						}
+					}
+					if ("rightClick".equals(action)) {
+						String ExpectedResult = "You have done a right click";
+						if (element.getText().contains(ExpectedResult)) {
+							System.out.println("RightClick is validated");
+						}
+					}
+					if ("dynamicClick".equals(action)) {
+						String ExpectedResult = "You have done a dynamic click";
+						if (element.getText().contains(ExpectedResult)) {
+							System.out.println("DynamicClick is validated");
+						}
+					}
+				}
+
 			}
 
 		} catch (Exception e) {
