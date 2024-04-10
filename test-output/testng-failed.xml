@@ -6,8 +6,8 @@
       <class name="orangehrmtests.WebElementTest">
         <methods>
           <include name="tearDown"/>
+          <include name="txtBoxTest"/>
           <include name="setUp"/>
-          <include name="buttonTest"/>
         </methods>
       </class> <!-- orangehrmtests.WebElementTest -->
     </classes>

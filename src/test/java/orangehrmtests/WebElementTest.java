@@ -2,6 +2,7 @@ package orangehrmtests;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.testng.annotations.Test;
 
@@ -15,15 +16,27 @@ public class WebElementTest extends SupportBrowser {
 	public void txtBoxTest() throws Throwable {
 		testPage = getTestPage();
 		testPage.navigateToLink();
+		Thread.sleep(3000);
 		testPage.clickonTextBox();
-		testPage.enterDeatilsOfTextBox("Man", "12@gmail.com", "Abc", "123");
-		testPage.validateTextBox("Man", "12@gmail.com", "Abc", "123");
+		Random random = new Random();
+		int randomNumber = random.nextInt(999);
+		//		testPage.enterDeatilsOfTextBox("Manaasa", "12@gmail.com", "Abc", "123");
+		//		testPage.validateTextBox("Manaasasa", "12@gmail.com", "Abc", "123");
+		String constantPart = "manasa";
+		String constantAddressBeforePart = "h.no-";
+		String constantAddressAfterPart = ",dollars colony, bangalore";
+		String randomAddressPart = constantAddressBeforePart + randomNumber + constantAddressAfterPart;
+		String randomName = constantPart + testPage.generateRandomString(4);
+		String randomEmail = randomName + "@gmail.com";
+		testPage.enterDeatilsOfTextBox(randomName, randomEmail, randomAddressPart, randomAddressPart);
+		testPage.extractDetails();
 	}
 
 	@Test
 	public void radioBtnTest() throws Throwable {
 		testPage = getTestPage();
 		testPage.navigateToLink();
+		Thread.sleep(3000);
 		testPage.clickRadioBtn();
 		testPage.selectRadioBtn("Impressive");
 
@@ -37,6 +50,7 @@ public class WebElementTest extends SupportBrowser {
 		buttonList.add("dynamicClick");
 		testPage = getTestPage();
 		testPage.navigateToLink();
+		Thread.sleep(3000);
 		testPage.clickOnButtons();
 		testPage.clickButtons(buttonList);
 		testPage.validateButton(buttonList);

@@ -2,6 +2,7 @@ package com.user.automation.common.pages;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -87,25 +88,25 @@ public class TestPage extends SupportBrowser {
 			System.out.println(element.getText());
 			if (name != null) {
 				String ExpectedResult = "Name:" + name;
-				if (element.getText().contains(ExpectedResult)) {
+				if (element.getText().equals(ExpectedResult)) {
 					System.out.println("Name is validated");
 				}
 			}
 			if (email != null) {
 				String ExpectedResult = "Email:" + email;
-				if (element.getText().contains(ExpectedResult)) {
+				if (element.getText().equals(ExpectedResult)) {
 					System.out.println("Email is validated");
 				}
 			}
 			if (curr != null) {
 				String ExpectedResult = "Current Address :" + curr;
-				if (element.getText().contains(ExpectedResult)) {
+				if (element.getText().equals(ExpectedResult)) {
 					System.out.println("Current Address  is validated");
 				}
 			}
 			if (perm != null) {
 				String ExpectedResult = "Permananet Address :" + perm;
-				if (element.getText().contains(ExpectedResult)) {
+				if (element.getText().equals(ExpectedResult)) {
 					System.out.println("Permananet Address  is validated");
 				}
 			}
@@ -210,19 +211,19 @@ public class TestPage extends SupportBrowser {
 				for (String action : actionsList) {
 					if ("doubleClick".equals(action)) {
 						String ExpectedResult = "You have done a double click";
-						if (element.getText().contains(ExpectedResult)) {
+						if (element.getText().equals(ExpectedResult)) {
 							System.out.println("DoubleClick is validated");
 						}
 					}
 					if ("rightClick".equals(action)) {
 						String ExpectedResult = "You have done a right click";
-						if (element.getText().contains(ExpectedResult)) {
+						if (element.getText().equals(ExpectedResult)) {
 							System.out.println("RightClick is validated");
 						}
 					}
 					if ("dynamicClick".equals(action)) {
 						String ExpectedResult = "You have done a dynamic click";
-						if (element.getText().contains(ExpectedResult)) {
+						if (element.getText().equals(ExpectedResult)) {
 							System.out.println("DynamicClick is validated");
 						}
 					}
@@ -233,5 +234,23 @@ public class TestPage extends SupportBrowser {
 		} catch (Exception e) {
 			Assert.fail("Not slected any of the buttons");
 		}
+	}
+
+	public String generateRandomString(int length) {
+		Random random = new Random();
+		String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+		StringBuilder sb = new StringBuilder(length);
+		for (int i = 0; i < length; i++) {
+			sb.append(characters.charAt(random.nextInt(characters.length())));
+		}
+		return sb.toString();
+	}
+
+	public void extractDetails() {
+		String givenUser = userInp.getAttribute("value");
+		String givenEmail = emailInp.getAttribute("value");
+		String givencurrAdd = currentAddressInp.getAttribute("value");
+		String givenPermAdd = permanentAdressInp.getAttribute("value");
+		validateTextBox(givenUser, givenEmail, givencurrAdd, givenPermAdd);
 	}
 }

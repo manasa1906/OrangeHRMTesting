@@ -2,20 +2,20 @@
 <testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-04-08T06:09:23Z" name="Default suite" finished-at="2024-04-08T06:09:32Z" duration-ms="9233">
+  <suite started-at="2024-04-10T06:15:40Z" name="Default suite" finished-at="2024-04-10T06:15:59Z" duration-ms="18539">
     <groups>
     </groups>
-    <test started-at="2024-04-08T06:09:23Z" name="Default test" finished-at="2024-04-08T06:09:32Z" duration-ms="9233">
+    <test started-at="2024-04-10T06:15:40Z" name="Default test" finished-at="2024-04-10T06:15:59Z" duration-ms="18539">
       <class name="orangehrmtests.WebElementTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtests.WebElementTest@63f259c3]" started-at="2024-04-08T11:39:23Z" name="setUp" finished-at="2024-04-08T11:39:27Z" duration-ms="4261" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:orangehrmtests.WebElementTest@63f259c3]" started-at="2024-04-10T11:45:40Z" name="setUp" finished-at="2024-04-10T11:45:49Z" duration-ms="8316" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="radioBtnTest()[pri:0, instance:orangehrmtests.WebElementTest@63f259c3]" started-at="2024-04-08T11:39:27Z" name="radioBtnTest" finished-at="2024-04-08T11:39:31Z" duration-ms="4532" status="PASS">
+        <test-method signature="txtBoxTest()[pri:0, instance:orangehrmtests.WebElementTest@63f259c3]" started-at="2024-04-10T11:45:49Z" name="txtBoxTest" finished-at="2024-04-10T11:45:59Z" duration-ms="9771" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- radioBtnTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtests.WebElementTest@63f259c3]" started-at="2024-04-08T11:39:31Z" name="tearDown" finished-at="2024-04-08T11:39:32Z" duration-ms="427" status="PASS">
+        </test-method> <!-- txtBoxTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:orangehrmtests.WebElementTest@63f259c3]" started-at="2024-04-10T11:45:59Z" name="tearDown" finished-at="2024-04-10T11:45:59Z" duration-ms="427" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
